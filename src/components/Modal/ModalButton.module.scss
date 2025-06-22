@@ -1,0 +1,23 @@
+.modalButton {
+  width: 64px;
+  height: 17px;
+  flex-grow: 0;
+  font-family: Montserrat, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #fff;
+  background: #7071f3;
+  border: none;
+  border-radius: 8px;
+  padding: 4px 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.modalButton:hover {
+  background: #5758c5;
+}

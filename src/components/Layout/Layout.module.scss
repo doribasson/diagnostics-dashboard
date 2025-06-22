@@ -1,0 +1,44 @@
+.layout {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  grid-template-rows: 56px 1fr;
+  grid-template-areas:
+    "sidebar topbar"
+    "sidebar main";
+  height: 100vh;
+  overflow: hidden;
+}
+.topbar {
+  grid-area: topbar;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 32px;
+  padding: 28px 32px;
+  box-shadow: 0 2px 8px 0 rgba(2, 29, 61, 0.12);
+  background-color: #fff;
+  // background-color: green;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  // width: 72px;
+  // flex: 1;
+  // height: 1080px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 16px 12px;
+  background-color: #2f2f66;
+}
+.main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 3em;
+  overflow: hidden;
+}

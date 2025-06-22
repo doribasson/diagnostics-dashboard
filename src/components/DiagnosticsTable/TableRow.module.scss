@@ -1,0 +1,17 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 7px solid #eee;
+  min-height: 40px;
+  background: #fff;
+  height: 160px;
+}
+
+.row > div {
+  flex: 1;
+  padding: 0 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

@@ -1,0 +1,81 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 400px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+  margin-bottom: 1.5rem;
+  font-size: 18px;
+  color: #1e1e1e;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.25rem;
+
+  label {
+    font-size: 13px;
+    color: #5f6b7a;
+    margin-bottom: 4px;
+  }
+
+  input,
+  select {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 8px 4px;
+    font-size: 14px;
+    background: transparent;
+    outline: none;
+
+    &:focus {
+      border-color: #5d9cec;
+    }
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+
+  button {
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .cancel {
+    background: white;
+    border: 1px solid #ccc;
+    color: #333;
+  }
+
+  .save {
+    background-color: #826afb;
+    color: white;
+    border: none;
+
+    &:hover {
+      background-color: #5e4dcf;
+    }
+  }
+}

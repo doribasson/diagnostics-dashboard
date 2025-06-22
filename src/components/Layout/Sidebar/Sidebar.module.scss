@@ -1,0 +1,109 @@
+.sidebar {
+  //   flex: 1;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  //   padding: 16px 12px;
+  background-color: #2f2f66;
+}
+.top {
+  margin-top: 1rem;
+  align-self: stretch;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2rem;
+  padding: 0;
+  //   background-color: red;
+}
+.bottom {
+  align-self: stretch;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  padding: 0;
+  // background-color: green;
+}
+.side_logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  background-color: #12ffe2;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.industry_windows_solid {
+  width: 24px;
+  height: 24px;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+  // background-color: green;
+}
+.industry_windows {
+  width: 18px;
+  height: 16px;
+  flex-grow: 0;
+  font-family: FontAwesome6Sharp-Solid;
+  font-size: 16px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: #01152b;
+  background-color: red;
+}
+.circle_info {
+  width: 24px;
+  height: 24px;
+  flex-grow: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+}
+.icon {
+  color: white;
+}
+ul {
+  list-style-type: none;
+}
+.bottom_logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  background-color: #7071f3;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
