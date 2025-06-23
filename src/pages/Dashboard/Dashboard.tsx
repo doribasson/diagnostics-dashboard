@@ -11,9 +11,8 @@ const Dashboard = () => {
   return (
     <>
       <div className={styles.chart}>{<TrendChart />}</div>
-
       <div className={styles.controls}>
-        <h4>Diagnostics</h4>
+        <span className={styles.diagnosticsHeader}>Diagnostics</span>
         <Button variant="custom" onClick={() => setOpen(true)}>
           + Add new
         </Button>

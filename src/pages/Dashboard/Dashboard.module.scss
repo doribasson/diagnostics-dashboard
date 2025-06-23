@@ -8,14 +8,16 @@
   display: flex;
   position: relative;
   top: 2.5rem;
-}
-.controls h4 {
-  margin: 0;
-  margin-right: auto;
-  font-size: 1.2rem;
-  font-weight: 600;
+  justify-content: space-between;
+  align-items: center;
 }
 
+.controls h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #01152b;
+}
 .chart {
   position: relative;
   height: 200px;
@@ -64,4 +66,10 @@
     background: transparent;
     z-index: auto;
   }
+}
+
+.diagnosticsHeader {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  color: #01152b;
 }
