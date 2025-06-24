@@ -1,11 +1,19 @@
 import { type Diagnostic } from "../features/diagnostics/types";
 
+const severityOrder = { critical: 0, alarm: 1, healthy: 2 };
+
+function getDayNumber(dateStr: string) {
+  const d = new Date(dateStr);
+  return d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate();
+}
+
 export const sortDiagnostics = (list: Diagnostic[]) => {
-  const severityOrder = { critical: 0, alarm: 1, healthy: 2 };
   return [...list].sort((a, b) => {
-    const dateDiff =
-      new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
-    if (dateDiff !== 0) return dateDiff;
+    const dayA = getDayNumber(a.created_at);
+    const dayB = getDayNumber(b.created_at);
+    if (dayA !== dayB) {
+      return dayB - dayA; // מהחדש לישן
+    }
     return severityOrder[a.severity] - severityOrder[b.severity];
   });
 };
