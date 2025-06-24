@@ -1,15 +1,16 @@
 import { ErrorBoundary } from "react-error-boundary";
 import React from "react";
+import styles from "./GlobalErrorBoundary.module.scss";
 
 const GlobalErrorBoundary: React.FC<React.PropsWithChildren<{}>> = ({
   children,
 }) => (
   <ErrorBoundary
     fallbackRender={({ error }) => (
-      <div style={{ padding: 32, textAlign: "center", color: "#c00" }}>
-        <h2>משהו השתבש 😥</h2>
-        <pre style={{ direction: "ltr", color: "#a00" }}>{error.message}</pre>
-        <p>אנא נסה לרענן את הדף או פנה לתמיכה.</p>
+      <div className={styles.errorBoundary}>
+        <h2>Something went wrong 😥</h2>
+        <pre>{error.message}</pre>
+        <p>Please try refreshing the page or contact support.</p>
       </div>
     )}
   >

@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Suspense, lazy } from "react";
-import GlobalErrorBoundary from "./components/GlobalErrorBoundary";
+import GlobalErrorBoundary from "./components/GlobalErrorBoundary/GlobalErrorBoundary";
 import Layout from "./components/Layout/Layout";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import "./styles/globals.scss";

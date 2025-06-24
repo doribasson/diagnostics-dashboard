@@ -2,8 +2,9 @@ import { useState } from "react";
 import { useAppDispatch } from "../../hooks/hook";
 import { addDiagnostic } from "../../features/diagnostics/diagnosticsSlice";
 import { v4 as uuidv4 } from "uuid";
-import Input from "../UI/Input";
-import Button from "../UI/Button";
+import Input from "../UI/Input/Input";
+import Button from "../UI/Button/Button";
+import Select from "../UI/Select/Select";
 import styles from "./AddDiagnosticModal.module.scss";
 
 interface Props {
@@ -48,31 +49,39 @@ const AddDiagnosticModal = ({ isOpen, onClose }: Props) => {
 
         <div className={styles.field}>
           <label>Fault type</label>
-          <select value={type} onChange={(e) => setType(e.target.value)}>
-            <option value="">Select...</option>
-            <option value="NDE bearing inner race deterioration">
-              NDE bearing inner race deterioration
-            </option>
-            <option value="NDE bearing mechanical looseness">
-              NDE bearing mechanical looseness
-            </option>
-            <option value="Motor anomaly detected">
-              Motor anomaly detected
-            </option>
-          </select>
+          <Select
+            value={type}
+            onChange={(e) => setType(e.target.value)}
+            options={[
+              { value: "", label: "Select..." },
+              {
+                value: "NDE bearing inner race deterioration",
+                label: "NDE bearing inner race deterioration",
+              },
+              {
+                value: "NDE bearing mechanical looseness",
+                label: "NDE bearing mechanical looseness",
+              },
+              {
+                value: "Motor anomaly detected",
+                label: "Motor anomaly detected",
+              },
+            ]}
+          />
         </div>
 
         <div className={styles.field}>
           <label>Severity</label>
-          <select
+          <Select
             value={severity}
             onChange={(e) => setSeverity(e.target.value)}
-          >
-            <option value="">Select...</option>
-            <option value="healthy">Healthy</option>
-            <option value="alarm">Alarm</option>
-            <option value="critical">Critical</option>
-          </select>
+            options={[
+              { value: "", label: "Select..." },
+              { value: "healthy", label: "Healthy" },
+              { value: "alarm", label: "Alarm" },
+              { value: "critical", label: "Critical" },
+            ]}
+          />
         </div>
 
         <div className={styles.actions}>

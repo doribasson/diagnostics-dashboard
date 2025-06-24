@@ -1,0 +1,27 @@
+.errorBoundary {
+  padding: 32px;
+  text-align: center;
+  color: #c00;
+
+  h2 {
+    margin-bottom: 12px;
+    color: #c00;
+    font-size: 1.6rem;
+  }
+  pre {
+    direction: ltr;
+    color: #a00;
+    background: #fff0f0;
+    border-radius: 6px;
+    padding: 12px;
+    margin: 12px auto;
+    max-width: 600px;
+    font-size: 1rem;
+    overflow-x: auto;
+  }
+  p {
+    color: #333;
+    font-size: 1.1rem;
+    margin-top: 16px;
+  }
+}

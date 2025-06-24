@@ -11,6 +11,7 @@ import { useAppSelector } from "../../hooks/hook";
 import { getDailyMaxSeverity } from "../../utils/groupByDay";
 import { useMemo } from "react";
 import { v4 as uuidv4 } from "uuid";
+import { formatDateMonthDay } from "../../utils/formatDate";
 import styles from "./TrendChart.module.scss";
 
 const severityScore = {
@@ -42,22 +43,13 @@ const TrendChart = () => {
     const { x, y, payload } = props;
     // Find the matching data object by created_at
     const dataObj = data.find((d) => d.created_at === payload.value);
-    const dateLabel = dataObj ? formatDate(dataObj.created_at) : "";
+    const dateLabel = dataObj ? formatDateMonthDay(dataObj.created_at) : "";
     if (!dateLabel) return <g />;
     return (
       <text x={x} y={y + 20} textAnchor="middle" fontSize={10} fill="#555">
         {dateLabel}
       </text>
     );
-  };
-
-  // Helper to format date as 'MonthName Day' (e.g. June 27)
-  const formatDate = (dateInput: string | Date) => {
-    const d = new Date(dateInput);
-    if (isNaN(d.getTime())) return "";
-    const day = d.getDate();
-    const month = d.toLocaleString("en-US", { month: "long" });
-    return `${month} ${day}`;
   };
 
   const renderCustomDot = (props: any) => {

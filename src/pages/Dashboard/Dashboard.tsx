@@ -1,8 +1,8 @@
 import { useState } from "react";
 import TrendChart from "../../components/TrendChart/TrendChart";
-import AddDiagnosticModal from "../../components/Modal/AddDiagnosticModal.tsx";
+import AddDiagnosticModal from "../../components/Modal/AddDiagnosticModal.tsx.tsx";
 import DiagnosticsTable from "../../components/DiagnosticsTable/DiagnosticsTable";
-import Button from "../../components/UI/Button";
+import Button from "../../components/UI/Button/Button";
 import styles from "./Dashboard.module.scss";
 
 const Dashboard = () => {
