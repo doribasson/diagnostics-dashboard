@@ -1,7 +1,6 @@
 import { FixedSizeList as List } from "react-window";
 import { useAppDispatch, useAppSelector } from "../../hooks/hook";
-import { setDiagnostics } from "../../features/diagnostics/diagnosticsSlice";
-import { diagnosticsService } from "../../services/diagnosticsService";
+import { fetchDiagnosticsFromJson } from "../../features/diagnostics/diagnosticsSlice";
 import { sortDiagnostics } from "../../utils/sorting";
 import TableRow from "./TableRow";
 import styles from "./DiagnosticsTable.module.scss";
@@ -13,17 +12,20 @@ const ROW_HEIGHT = 50;
 const DiagnosticsTable = () => {
   const dispatch = useAppDispatch();
   const diagnostics = useAppSelector((state) => state.diagnostics.list);
+  const loading = useAppSelector((state) => state.diagnostics.loading);
+  const error = useAppSelector((state) => state.diagnostics.error);
 
   useEffect(() => {
-    diagnosticsService.fetchDiagnostics().then((data) => {
-      dispatch(setDiagnostics(data as any as Diagnostic[]));
-    });
+    dispatch(fetchDiagnosticsFromJson());
   }, [dispatch]);
 
   const sortedDiagnostics = useMemo(
     () => sortDiagnostics(diagnostics),
     [diagnostics]
   );
+
+  if (loading) return <div>טוען נתונים...</div>;
+  if (error) return <div style={{ color: "red" }}>{error}</div>;
 
   return (
     <div className={styles.table}>
@@ -33,12 +35,12 @@ const DiagnosticsTable = () => {
         <div className={styles.label}>Severity</div>
       </div>
       <List
-        height={400}
+        height={300}
         itemCount={sortedDiagnostics.length}
         itemSize={ROW_HEIGHT}
         width="100%"
       >
-        {({ index, style }) => {
+        {({ index, style }: { index: number; style: React.CSSProperties }) => {
           const row = sortedDiagnostics[index];
           if (!row?.id) {
             console.warn("Missing id for row:", row, "at index", index);
